@@ -37,9 +37,18 @@ body {
   padding: 0.5em;
 }
 
+.header__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 .header__title {
   font-size: 2.5em;
-  line-height: 250%;
+  line-height: 1;
   text-align: center;
   letter-spacing: 0.4em;
 }
@@ -256,8 +265,8 @@ body {
   }
 
   .header__title {
-    font-size: 2.9em;
-    line-height: 200%;
+    font-size: 3em;
+    line-height: 1;
     text-align: center;
     letter-spacing: 0.4em;
   }
@@ -281,7 +290,7 @@ body {
 
   .header__title {
     font-size: 2.7rem;
-    line-height: 250%;
+    line-height: 1;
     text-align: center;
     letter-spacing: 0.4em;
   }
@@ -289,6 +298,8 @@ body {
   .accordion__item-title {
     font-size: 2.1em;
   }
+
+  .accordion__item-title:focus {}
 
   .footer__year,
   .footer__link {
