@@ -39,7 +39,7 @@ body {
 
 .header__title {
   font-size: 2.5em;
-  line-height: 2.8em;
+  line-height: 250%;
   text-align: center;
   letter-spacing: 0.4em;
 }
@@ -53,13 +53,15 @@ body {
 .accordion {
   margin: 0 auto;
   color: #426C79;
-  height: 50%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .accordion__item {
+  width: 100%;
+  margin: 0 auto;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -96,40 +98,42 @@ body {
   width: 0;
 }
 
-.accordion__radio:checked+.accordion__image-wrapper {
+.accordion__radio:checked~.accordion__image-wrapper {
   width: 0;
   height: 0;
 }
 
-#accordion__radio-1:checked+.label-first {
+#accordion__radio-1:checked~.label-first {
   /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
 
-h2+#accordion__radio-3:checked {
+
+.accordion__radio:checked~.title {
   color: var(--color_checked);
+  background: url('../assets/svg/icons8-удалить-30.svg') 98% center/0.8em 0.8em no-repeat;
 }
 
-#accordion__radio-2:checked+.label-second {
+#accordion__radio-2:checked~.label-second {
   /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
 
-#accordion__radio-3:checked+.label-third {
+#accordion__radio-3:checked~.label-third {
   /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
 
-#accordion__radio-4:checked+.label-fourth {
+#accordion__radio-4:checked~.label-fourth {
   /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
 
-#accordion__radio-5:checked+.label-fifth {
+#accordion__radio-5:checked~.label-fifth {
   /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
@@ -144,7 +148,7 @@ h2+#accordion__radio-3:checked {
   overflow: hidden;
   padding: 10px 0 0 0;
   margin-top: -20px;
-  transition: height 300ms linear;
+  transition: height 500ms linear;
 }
 
 .accordion__item-title:focus {
@@ -152,7 +156,8 @@ h2+#accordion__radio-3:checked {
   background: url('../assets/svg/icons8-удалить-30.svg') 98% center/0.8em 0.8em no-repeat;
 }
 
-.accordion__image-wrapper:hover,
+/*.accordion__image-wrapper:hover,*/
+.accordion__image-wrapper:focus,
 .accordion__item-title:focus~.accordion__image-wrapper {
   width: 100%;
   height: var(--img_h);
@@ -202,48 +207,126 @@ h2+#accordion__radio-3:checked {
 .footer__container>* {
   width: 30%;
   max-width: 33%;
-  padding: 1em;
   height: 9vh;
-  text-align: center;
 }
 
 .footer__logo {
+  padding: 1em;
   background: url('../assets/img/rsschool_logo.png') right center/contain no-repeat content-box;
 }
 
 .footer__link-wrapper {
   padding: 0;
+  display: flex;
+  align-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .footer__link {
-  display: block;
   text-decoration: none;
   text-align: left;
   color: black;
+  height: 100%;
+  transition: all 300ms linear;
+}
+
+.footer__year {
   width: 100%;
   height: 100%;
-  padding: 1em;
+  display: flex;
+  align-content: center;
+}
 
+.footer__year p {
+  width: 100%;
+  text-align: center;
 }
 
 .footer__year,
 .footer__link {
   font-size: 2em;
-  line-height: 120%;
+}
+
+.footer__link:active {
+  transform: scale(1.1, 1.1);
+  border-bottom: 1px solid #000;
 }
 
 @media screen and (min-width: 1280px) {
   body {
     --img_h: 35vh;
+    font-size: 0.7em;
   }
 
-
+  .header__title {
+    font-size: 2.7em;
+    line-height: 200%;
+    text-align: center;
+    letter-spacing: 0.4em;
+  }
 
 }
 
 @media (hover: hover) {
+
+  .accordion {
+    padding: 0 10%;
+  }
+
+  .accordion__item {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .accordion__item-title,
+  .accordion__radio:checked~.accordion__item-title {
+    background-image: none;
+  }
+
+  .accordion:hover {
+    cursor: pointer;
+  }
+
+  .accordion:hover .accordion__item-title,
+  .accordion:hover .accordion__radio:checked~.accordion__item-title {
+    color: var(--color_selected);
+  }
+
+  .accordion:hover .accordion__item-title {
+    background: url('../assets/img/icons8-сложение-30.png') 98% center/0.8em 0.8em no-repeat;
+  }
+
+  .accordion:hover .accordion__radio:checked~.accordion__item-title {
+    background: url('../assets/svg/icons8-удалить-30.svg') 98% center/0.8em 0.8em no-repeat;
+  }
+
+
   .accordion__item-title:hover {
     cursor: pointer;
     color: var(--color_selected);
+  }
+
+  /*
+  .accordion__item-title:hover {
+    box-shadow: none;
+    transform: translate(0.2em, 0.2em);
+  }
+*/
+  .accordion:hover .accordion__item-title:hover,
+  .accordion:hover .accordion__radio:checked~.title:hover {
+    color: var(--color_selected);
+    background: url('../assets/svg/icons8-удалить-30.svg') 98% center/0.8em 0.8em no-repeat;
+  }
+
+  .accordion__image-wrapper:hover,
+  .accordion__item-title:hover~.accordion__image-wrapper {
+    width: 100%;
+    height: var(--img_h);
+  }
+
+  .footer__link:hover {
+    transform: scale(1.1, 1.1);
+    border-bottom: 1px solid #000;
   }
 }
