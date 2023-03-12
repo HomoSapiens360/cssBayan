@@ -353,7 +353,8 @@ body {
     background: url('../assets/img/icons8-сложение-30.png') 98% center/0.8em 0.8em no-repeat;
   }
 
-  .accordion:hover .accordion__radio:checked~.accordion__item-title {
+  .accordion:hover .accordion__radio:checked~.accordion__item-title,
+  .accordion:hover .accordion__item-title:hover {
     background: url('../assets/svg/icons8-удалить-30.svg') 98% center/0.8em 0.8em no-repeat;
   }
 
