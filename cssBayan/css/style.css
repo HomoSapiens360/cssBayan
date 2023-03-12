@@ -68,7 +68,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 5px;
-  /*margin-bottom: 10px;*/
 }
 
 
@@ -105,7 +104,6 @@ body {
 }
 
 #accordion__radio-1:checked~.label-first {
-  /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
@@ -121,33 +119,27 @@ body {
 }
 
 #accordion__radio-2:checked~.label-second {
-  /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
 
 #accordion__radio-3:checked~.label-third {
-  /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
 
 #accordion__radio-4:checked~.label-fourth {
-  /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
 
 #accordion__radio-5:checked~.label-fifth {
-  /*border: 1px solid black;*/
   width: 100%;
   height: var(--img_h);
 }
 
 
 .accordion__image-wrapper {
-  /*width: 100%;
-  height: 50vh;*/
   width: 0;
   height: 0vh;
   overflow: hidden;
@@ -161,7 +153,6 @@ body {
   background: url('../assets/svg/icons8-удалить-30.svg') 98% center/0.8em 0.8em no-repeat;
 }
 
-/*.accordion__image-wrapper:hover,*/
 .accordion__image-wrapper:focus,
 .accordion__item-title:focus~.accordion__image-wrapper {
   width: 100%;
@@ -350,12 +341,6 @@ body {
     color: var(--color_selected);
   }
 
-  /*
-  .accordion__item-title:hover {
-    box-shadow: none;
-    transform: translate(0.2em, 0.2em);
-  }
-*/
   .accordion:hover .accordion__item-title:hover,
   .accordion:hover .accordion__radio:checked~.title:hover {
     color: var(--color_selected);
